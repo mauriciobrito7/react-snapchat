@@ -10,3 +10,7 @@ if (!firebase.apps.length) {
     projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   });
 }
+
+export const provider = new firebase.auth.GoogleAuthProvider();
+
+export default firebase;
