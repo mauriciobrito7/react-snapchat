@@ -9,6 +9,7 @@ import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { login, logout, selectUser } from "./features/appSlice";
 import firebase from "./utils/firebase";
+import SnapchatIcon from "./components/Icons/Snapchat";
 
 function App() {
   const user = useSelector(selectUser);
@@ -36,22 +37,27 @@ function App() {
         {!user ? (
           <Login />
         ) : (
-          <div className="app__body">
-            <Switch>
-              <Route exact path="/">
-                <WebcamCapture />
-              </Route>
-              <Route exact path="/preview">
-                <Preview />
-              </Route>
-              <Route exact path="/chats">
-                <Chats />
-              </Route>
-              <Route exact path="/chats/view">
-                <ChatView />
-              </Route>
-            </Switch>
-          </div>
+          <>
+            <SnapchatIcon width={56} height={56} />
+            <div className="app__body">
+              <div className="app__bodyBackground">
+                <Switch>
+                  <Route exact path="/">
+                    <WebcamCapture />
+                  </Route>
+                  <Route exact path="/preview">
+                    <Preview />
+                  </Route>
+                  <Route exact path="/chats">
+                    <Chats />
+                  </Route>
+                  <Route exact path="/chats/view">
+                    <ChatView />
+                  </Route>
+                </Switch>
+              </div>
+            </div>
+          </>
         )}
       </Router>
     </div>

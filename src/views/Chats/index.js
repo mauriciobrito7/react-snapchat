@@ -9,6 +9,7 @@ import { RadioButtonUnchecked } from "@material-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../features/appSlice";
 import { useHistory } from "react-router-dom";
+import { resetCameraImage } from "../../features/cameraSlice";
 
 const Chats = () => {
   const [posts, setPosts] = useState([]);
@@ -32,6 +33,7 @@ const Chats = () => {
   }, []);
 
   const takeSnap = () => {
+    dispatch(resetCameraImage());
     history.push("/");
   };
 
@@ -44,7 +46,7 @@ const Chats = () => {
           className="chats__avatar"
         />
         <div className="chats__search">
-          <SearchIcon />
+          <SearchIcon className="chats__searchIcon" />
           <input placeholder="Friends" type="text" />
         </div>
         <ChatBubbleIcon className="chats__chatIcon" />
