@@ -43,6 +43,10 @@
 .preview__footer > h2 {
   font-size: 8px;
   margin-right: 3px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .preview__sendIcon {

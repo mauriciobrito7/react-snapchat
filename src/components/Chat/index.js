@@ -3,15 +3,14 @@ import "./Chat.css";
 import { Avatar } from "@material-ui/core";
 import StopRoundedIcon from "@material-ui/icons/StopRounded";
 import ReactTimeago from "react-timeago";
-import { useDispatch, useSelector } from "react-redux";
-import { selectImage, selectUser } from "../../features/appSlice";
+import { useDispatch } from "react-redux";
+import { selectImage } from "../../features/appSlice";
 import firebase from "../../utils/firebase";
 import { useHistory } from "react-router-dom";
 
 const Chat = ({ id, username, timestamp, imageUrl, read, profilePic }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const user = useSelector(selectUser);
 
   const open = () => {
     if (!read) {
